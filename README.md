@@ -36,10 +36,13 @@ To run migration scripts, simply run `make migrate`.
 
 ## Endpoints
 
-Access http://localhost:5000/api/estoque to start using the API.
+Access http://localhost:5080/admin/ to log into the admin console.
+
+All API endpoint are mapped to http://localhost:5080/api/
 
 Postman is recommended for API testing.
 
 ## TODO next
 
-- Validate that user login is not duplicated before sending to DB
+- Authentication
+- Query search parameters for all entities
