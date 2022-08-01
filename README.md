@@ -1,4 +1,4 @@
-# E-commerce inventory management API
+# AKRE System (real estate management)
 
 ## Initial setup (only for informational purposes)
 
