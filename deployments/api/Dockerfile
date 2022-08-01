@@ -1,9 +1,7 @@
 FROM python:3
 
-ADD app/ /app
-WORKDIR /app
+ADD api/ /code
+WORKDIR /code
 
 RUN apt-get update
 RUN pip install -r requirements.txt
-
-CMD flask run --host=0.0.0.0

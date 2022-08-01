@@ -1,18 +1,4 @@
 services:
-  api:
-    container_name: api-akre
-    build:
-      context: ../
-      dockerfile: deployments/app/Dockerfile
-    ports:
-      - "5000:5000"
-    volumes: ['../api:/app']
-    environment:
-      FLASK_APP: __init__.py
-      DATABASE_NAME: akre
-      DATABASE_USERNAME: root
-      DATABASE_PASSWORD: "KvJ2TyV2"
-      DATABASE_HOST: database
   database:
     container_name: database-akre
     image: redis/redis-stack
@@ -21,6 +7,17 @@ services:
       - "5001:8001"
     volumes:
       - ./redis/data:/data
+  api:
+    container_name: api-akre
+    build:
+      context: ../
+      dockerfile: deployments/api/Dockerfile
+    ports:
+      - "5080:8080"
+    volumes: ['../api:/code']
+    command: python manage.py runserver 0.0.0.0:8080
     environment:
-      MYSQL_ROOT_PASSWORD: "KvJ2TyV2"
-      MYSQL_ROOT_HOST: "%"
+      - ROOTUSERNAME=root
+      - ROOTPASSWORD=cBMJ6V4HH8djT6zm
+    depends_on:
+      - database

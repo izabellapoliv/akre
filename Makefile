@@ -25,6 +25,10 @@ restart:
 logs:
 	docker-compose -f deployments/docker-compose.yml logs
 
+migrate:
+	docker-compose -f deployments/docker-compose.yml run api python manage.py makemigrations
+	docker-compose -f deployments/docker-compose.yml run api python manage.py migrate
+
 ## Prints help message
 help:
 	printf "\n${COLOR_YELLOW}${PROJECT}\n------\n${COLOR_RESET}"
