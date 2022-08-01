@@ -1,5 +1,7 @@
 **/.history
-**/.env
 **/__pycache__/**
 **/database/redis/**
 **/.vscode
+
+**/.env
+**/db.sqlite3
