@@ -1,3 +1,3 @@
-def calculate_total(valor_segurado):
+def calculate_total(importancia_segurada):
     cotacao_taxa = 10
-    return (cotacao_taxa / 100) * valor_segurado
+    return (cotacao_taxa / 100) * importancia_segurada
