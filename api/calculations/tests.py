@@ -1,8 +1,28 @@
 from django.test import TestCase
 
 from calculations.helpers.conteudo_segurado import calculate_total
+from calculations.helpers.importancia_segurada import calculate_importancia_segurada
+from calculations.helpers.resp_civil import calculate_resp_civil
+from calculations.helpers.danos_eletricos import calculate_danos_eletricos
+from calculations.helpers.cobertura_vendaval import calculate_cobertura_vendaval
 
-class ConteudoSeguradoTestCase(TestCase):
-    def test_value_is_correct(self):
-        result = calculate_total(cotacao_taxa=0.16, valor_segurado=96000)
+class ContractTestCase(TestCase):
+    def test_importancia_segurada_is_correct(self):
+        result = calculate_importancia_segurada(aluguel=1000)
+        self.assertEqual(result, 120000)
+
+    def test_conteudo_segurado_is_correct(self):
+        result = calculate_total(valor_segurado=96000)
         self.assertEqual(result, 9600)
+
+    def test_resp_civil_is_correct(self):
+        result = calculate_resp_civil()
+        self.assertEqual(result, 15000)
+
+    def test_danos_eletricos_is_correct(self):
+        result = calculate_danos_eletricos()
+        self.assertEqual(result, 6000)
+
+    def test_cobertura_vendaval_is_correct(self):
+        result = calculate_cobertura_vendaval()
+        self.assertEqual(result, 5000)
