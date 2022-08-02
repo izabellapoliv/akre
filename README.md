@@ -34,6 +34,8 @@ To view logs, such as error messages, run `make logs`.
 
 To run migration scripts, simply run `make migrate`.
 
+To run automated testes, run the command `make tests`.
+
 ## Endpoints
 
 Access http://localhost:5080/admin/ to log into the admin console.
