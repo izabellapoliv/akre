@@ -35,6 +35,12 @@ class ContractTestCase(TestCase):
         self.assertEqual(result, 65)
 
     def test_premio_liquido_without_optional_coverage(self):
-        premio_liquido = PremioLiquido()
-        result = premio_liquido.calculate(aluguel=1000)
+        premio_liquido = PremioLiquido(aluguel=1000)
+        result = premio_liquido.calculate()
         self.assertEqual(result, 216)
+
+    def test_premio_liquido_with_seguro_conteudo_optional(self):
+        premio_liquido = PremioLiquido(aluguel=1000)
+        result = premio_liquido.with_seguro_conteudo() \
+            .calculate()
+        self.assertEqual(result, 237.6)
