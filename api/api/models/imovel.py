@@ -12,6 +12,11 @@ class Imovel(models.Model):
     endereco_cidade = models.CharField(max_length=255)
     endereco_uf = models.CharField(max_length=2)
     endereco_complemento = models.CharField(max_length=255, null=True, blank=True)
+    aluguel = models.DecimalField(max_digits=10, decimal_places=2)
+    tipo = models.CharField(max_length=11, choices=[
+        ('RESIDENCIAL', 'Residencial (casa, apartamento)'),
+        ('COMERCIAL', 'Comercial (escritório, consultório, comércio)'),
+    ])
 
     fk_inquilino = models.ForeignKey(
         Inquilino,
