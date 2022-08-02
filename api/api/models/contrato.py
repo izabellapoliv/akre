@@ -14,15 +14,15 @@ class Contrato(models.Model):
     valor_segurado = models.DecimalField(max_digits=10, decimal_places=2)
     cotacao_taxa = models.DecimalField(max_digits=5, decimal_places=4)
 
+    valor_seguro_conteudo = models.DecimalField(max_digits=10, decimal_places=2)
+    valor_resp_civil = models.DecimalField(max_digits=10, decimal_places=2)
+    valor_danos_eletricos = models.DecimalField(max_digits=10, decimal_places=2)
+    valor_seguro_vendaval = models.DecimalField(max_digits=10, decimal_places=2)
+    valor_assistencia = models.DecimalField(max_digits=10, decimal_places=2)
+
     valor_premio_liquido = models.DecimalField(max_digits=10, decimal_places=2)
     cotacao_iof_total = models.DecimalField(max_digits=5, decimal_places=2)
     valor_premio_total = models.DecimalField(max_digits=10, decimal_places=2)
-
-    possui_seguro_conteudo = models.BooleanField(default=False)
-    possui_resp_civil = models.BooleanField(default=False)
-    possui_danos_eletricos = models.BooleanField(default=False)
-    possui_seguro_vendaval = models.BooleanField(default=False)
-    possui_assistencia = models.BooleanField(default=False)
 
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)

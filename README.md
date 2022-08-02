@@ -5,7 +5,7 @@
 After setting up the basic folder structure (root-level files, deployments and requiments.txt), I had to run the following commands to setup the django app:
 ```
 docker-compose -f deployments/docker-compose.yml run api django-admin startproject website .
-docker-compose -f deployments/docker-compose.yml run api python manage.py startapp api
+docker-compose -f deployments/docker-compose.yml run api python manage.py startapp {microservice, such as api or calculations}
 ```
 
 To migrate the initial models, the ones that already come built into the Django framework, using SQLite:
@@ -38,11 +38,12 @@ To run migration scripts, simply run `make migrate`.
 
 Access http://localhost:5080/admin/ to log into the admin console.
 
-All API endpoint are mapped to http://localhost:5080/api/
+All CRUD API endpoint are mapped to http://localhost:5080/api/ while the calculations are done in a different API http://localhost:5080/calculations/
 
 Postman is recommended for API testing.
 
 ## TODO next
 
+- Unit tests for all calculations (priority)
 - Authentication
 - Query search parameters for all entities
