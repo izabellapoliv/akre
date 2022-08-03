@@ -46,6 +46,5 @@ Postman is recommended for API testing.
 
 ## TODO next
 
-- Authentication
-- Query search parameters for all entities
-- API to generate reports
+- Separate API to generate reports
+- Authentication (soon?)
