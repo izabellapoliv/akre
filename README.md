@@ -48,3 +48,4 @@ Postman is recommended for API testing.
 
 - Authentication
 - Query search parameters for all entities
+- API to generate reports
