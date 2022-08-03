@@ -46,7 +46,5 @@ Postman is recommended for API testing.
 
 ## TODO next
 
-- Unit tests for all calculations (priority)
-- Calculate and return all values in the same endpoint
 - Authentication
 - Query search parameters for all entities
