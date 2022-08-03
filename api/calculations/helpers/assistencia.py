@@ -1,2 +1,1 @@
-def calculate_value_assistencia():
-    return 65
+value_assistencia = 65
