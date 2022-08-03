@@ -13,5 +13,5 @@ router.register(r'iof-total', IOFTotalViewSet, basename='iof_total')
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('auth/', include('rest_framework.urls', namespace='calculations_rest_framework'))
 ]

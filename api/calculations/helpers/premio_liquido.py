@@ -1,7 +1,7 @@
 from calculations.helpers.default import default_tax
 from calculations.helpers.conteudo_segurado import calculate_premio_liquido_conteudo
 from calculations.helpers.importancia_segurada import calculate_importancia_segurada
-from calculations.helpers.resp_civil import calculate_resp_civil
+from calculations.helpers.resp_civil import value_resp_civil
 from calculations.helpers.danos_eletricos import calculate_danos_eletricos
 from calculations.helpers.cobertura_vendaval import calculate_cobertura_vendaval
 from calculations.helpers.assistencia import calculate_value_assistencia
@@ -26,7 +26,7 @@ class PremioLiquido():
         return self
 
     def with_resp_civil(self):
-        self.__optionals += calculate_resp_civil()
+        self.__optionals += value_resp_civil
         return self
 
     def with_danos_eletricos(self):
